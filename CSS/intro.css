@@ -1,0 +1,122 @@
+h1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 18.5em;
+    height: 1.25em;
+    animation: typing 3.0s steps(37, end);
+    /* animation: typing 3.0s steps(37, end), blink-caret .75s step-end infinite; */
+    word-break: break-all;
+    overflow: hidden;
+    /* border-right: 0.5px solid transparent; */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 18.5em; }
+}
+
+/*
+animation for caret
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: currentColor; }
+}
+*/
+
+#selfintro {
+    display: block;
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: auto;
+    overflow: hidden;
+}
+
+#introleft{
+    width: 50%;
+    float: left;
+    height: fit-content;
+}
+
+#pic{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    border-radius: 5%;
+    height: fit-content;
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+#socials{
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#socials li{
+    list-style-type: none;
+}
+
+#socials img{
+    width: 60%;
+    padding-inline: 1%;
+}
+
+#introright{
+    width: 50%;
+    float: right;
+    height: fit-content;
+    font-size: 1rem;
+}
+
+#introright p{
+    display: inline;
+}
+
+@media screen and (max-width: 640px){
+    #selfintro {
+        width: 80%;
+    }
+    #introleft, #introright{
+        float: none;
+        width: 100%;
+    }
+
+    #pic{
+        width: 60%;
+    } 
+}
+
+#content-nav{
+    background-color: #fef8c66c;
+    height: fit-content;
+    width: 65%;;
+    font-size: 1rem;
+    font-family: 'Inconsolata', 'Dosis', monospace;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: outset;
+    border-radius: 0.5cm;
+    border-width: 0.5px;
+}
+
+#content-nav div{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 640px){
+    #content-nav{
+        width: 80%;
+    }
+}

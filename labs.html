@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Haitong's Lab for CSE 134B</title>
+        <link rel="stylesheet" href="CSS/styles.css">
+        <style>
+            p {color:blue;}
+          </style>
+    </head>
+    <body>
+        <header>
+          <nav id="headernav">
+            <a href="/index.html">HOME</a> |
+            <a href="/blogs.html">BLOGS</a> |
+            <a href="/eats.html">EATS</a> |
+            <a href="/travels.html">TRAVELS</a> |
+            <a href="/labs.html">LABS</a>
+        </nav>
+        </header>
+        This is the lab page. Experimenting with elements/tags that don't 
+        fit to the main portfolio site.
+        <section>
+            <aside>
+                <audio controls>
+                    <source src="horse.ogg" type="audio/ogg">
+                  Your browser does not support the audio element.
+                </audio>
+            </aside>
+        </section>
+        <hr>
+        <section>
+            <details>
+                <summary>Trying the details and summary tags</summary>
+                
+                    <ol>
+                        <li>
+                            
+                              <pre>
+                              This is the detailed text that I want to show within this block.
+                                <br>
+                                This is some other text, I separated this paragraph with the above
+                                using a break tag.
+                              </pre>
+                            
+                        </li>
+                        <li>
+                        <p>
+                            Here I am testing the span tag, aiming to change
+                            the color of blue to <span style="color:red">red</span>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            There are so many ways and tags I can use to
+                            <em>emphasize</em> some texts.
+                        </p>
+              
+                    </li>
+                    </ol>
+              </details>
+        </section>
+      <hr>
+        <section>
+            <h3>testing fieldset, legend, select, optgroup and option tags</h3>
+            <fieldset>
+                <legend>What's your favorite color?</legend>
+                <label for="colors">Choose a color:</label>
+                <select name="colors" id="colors">
+                    <optgroup label="Warm colors"></optgroup>
+                        <option value="red">Red</option>
+                        <option value="yellow">Yellow</option>
+                    <optgroup label="Cold colors"></optgroup>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                </select>
+            </fieldset>
+        </section>
+      <hr>
+        <section>
+            <h3>testing canvas tag</h3>
+            <canvas id="testCanvas">
+                Your browser does not support the canvas tag.
+                </canvas>
+                
+                <script>
+                var canvas = document.getElementById("testCanvas");
+                var ctx = canvas.getContext("2d");
+                ctx.fillStyle = "blue";
+                ctx.fillRect(10, 10, 10, 10);
+                </script>
+        </section>
+        <section>
+            <h3>testing iframe tag</h3>
+            <iframe src="https://www.ucsd.edu" title="UCSD Web Site"></iframe>
+        </section>
+        <section>
+            <h3>testing code tag</h3>
+            <p>Coding is so fun.</p>
+            <p>the first line of code I learned is <code>Hello World!</code>.</p>
+        </section>
+        <section>
+            <h3>testing picture tag</h3>
+            <picture>
+                <source media="(min-width:650px)" srcset="images/ucsd.jpeg">
+                <source media="(min-width:650px)" srcset="images/wic.jpeg">
+                <img src="images/ucsd.jpeg" alt="UCSD" style="width:10%;">
+              </picture>
+        </section>
+        <section>
+            <h3>testing table tag</h3>
+            <table>
+                <caption>Months and Days in Month</caption>
+                <colgroup>
+                    <col span="1" style="background-color:rgba(112, 141, 228, 0.28)">
+                    <col style="background-color:rgba(255, 255, 0, 0.163)">
+                  </colgroup>
+                <tr>
+                  <th>Month</th>
+                  <th>Days in Month</th>
+                </tr>
+                <tr>
+                  <td>January</td>
+                  <td>31</td>
+                </tr>
+                <tr>
+                    <td>February</td>
+                    <td>28/29</td>
+                  </tr>
+                  <tr>
+                    <td>March</td>
+                    <td>31</td>
+                  </tr>
+                  <tr>
+                    <td>April</td>
+                    <td>30</td>
+                  </tr>
+                  <tr>
+                    <td>May</td>
+                    <td>31</td>
+                  </tr>
+                  <tr>
+                    <td>June</td>
+                    <td>30</td>
+                  </tr>
+                  <tr>
+                    <td>July</td>
+                    <td>31</td>
+                  </tr>
+                  <tr>
+                    <td>August</td>
+                    <td>31</td>
+                  </tr>
+                  <tr>
+                    <td>September</td>
+                    <td>30</td>
+                  </tr>
+                  <tr>
+                    <td>October</td>
+                    <td>31</td>
+                  </tr>
+                  <tr>
+                    <td>November</td>
+                    <td>30</td>
+                  </tr>
+                  <tr>
+                    <td>December</td>
+                    <td>31</td>
+                  </tr>
+              </table>
+        </section>
+        <section>
+            <h3>testing svg tag</h3>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="50" fill="yellow" />
+            </svg>
+        </section>
+        <section>
+            <p>testing video tag</p>
+            <video width="320" height="240" controls>
+                <source src="movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+        </section>
+        <section>
+          <form action="/action_page.php">
+            <label for="answer">Do you find this site helpful:</label>
+            <input list="answers" name="answer" id="answer">
+            <datalist id="answers">
+              <option value="YES">
+              <option value="NOT YET">
+            </datalist>
+            <input type="submit" value="Submit">
+          </form>
+        </section>
+
+        <footer id="footer">
+          <p>Find me here: <a href="https://www.linkedin.com/in/haitongc/" target="_blank">LinkedIn</a>,
+              <a href="https://github.com/hchen7788" target="_blank">GitHub</a>,
+              <a href="mailto:haitongchen116@gmail.com" target="_blank">email</a>,
+              <a href="https://docs.google.com/document/d/1pymvXqyczpcKYYplnFrErOaaqzcPqVB7J3MQrqn1mv4/edit?usp=sharing" target="_blank">Resume</a></a></p>
+          <p>Copyright @Haitong Chen</p>
+      </footer>
+    </body>
+</html>

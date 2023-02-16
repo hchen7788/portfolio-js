@@ -1,0 +1,47 @@
+.drop-down-header{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.search-bar{
+    text-align: center;
+    border-radius: 10%;
+    margin-bottom: 20px;
+}
+
+.search-prompt {
+    font-family: 'Inconsolata', 'Dosis', monospace;
+    font-size: 20px;
+    border: 0;
+}
+
+.search-box {
+    padding-left: 10px;
+    font-family: 'Inconsolata', 'Dosis', monospace;
+    font-size: 20px;
+    border-style: outset;
+    border-radius: 50px;
+    border-width: 0.5px;
+    height: 30px;
+}
+
+.search-btn{
+    text-align: center;
+    background-color: white;
+    border: 0;
+    font-size: 20px;
+
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    transition-delay: 0.1s;
+}
+
+.search-btn:hover{
+    background-color: azure;
+}
+
+.search-btn:active{
+    background-color: aliceblue;
+}
+

@@ -1,0 +1,53 @@
+.anchor-text{
+    color:black;
+    font-size: 1.5rem;
+    font-family: 'Inconsolata', 'Dosis', monospace;
+}
+
+#detailexp {
+    display: block;
+    margin: auto;
+    width: 60%;
+    height: auto;
+    overflow: hidden;
+}
+
+#detailexp img {
+    width: 25%;
+    height: 25%;
+    float: left;
+    object-fit: contain;
+}
+
+#detailexp div{
+    padding: 50px;
+}
+
+#detailexp section{
+    padding: 30px;
+}
+
+#detailexp li{
+    list-style-type: none;
+}
+
+.exp-text{
+    font-size: 1rem;
+    float: right;
+    width: 50%;
+}
+
+@media screen and (max-width: 640px){
+    #detailexp{
+        width: 80%;
+    }
+
+    .exp-text{
+        width: 100%;
+    }
+
+    #detailexp img{
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,94 @@
+html, body, h1{
+    margin: 0;
+    padding-top: 0;
+    font-family: 'Inconsolata', 'Dosis', monospace;
+}
+
+#hamburger{
+    display: none;
+}
+
+a:link, a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #AAA9A9;
+    text-decoration: underline;
+}
+
+#headernav {
+    height: 30px;
+    width: 100%;
+    background-color: #fef8c6;
+    font-size: 20px;
+    color: black;
+    font-family: 'Inconsolata', 'Dosis', monospace;
+    text-align: center;
+}
+
+@media screen and (max-width: 640px){
+    /*
+    #headernav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    */
+    #headernav{
+        display: none;
+    }
+
+    #hamburger{
+        height: 30px;
+        width: 100%;
+        background-color: #fef8c6;
+        text-align: center;
+        display:block;
+        text-align: center;
+    }
+}
+
+#footer{
+    height: fit-content;
+    width: 100%;
+    background-color: #fef8c6;
+    text-align: center;
+    color: #AAA9A9;
+    font-family: 'Inconsolata', 'Dosis', monospace;
+}
+
+#footer p{
+    margin: 0;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+#feedback-box{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#feedback-btn {
+    font-family: 'Inconsolata', 'Dosis', monospace;
+    font-size: 10px;
+    background-color: #fef8c62b;
+    border-radius: 0.5cm;
+    border-width: 0.1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    transition-delay: 0.1s;
+}
+
+#feedback-btn:hover{
+    background-color: azure;
+}
+
+#feedback-btn:active{
+    background-color: aliceblue;
+}

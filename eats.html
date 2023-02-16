@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Haitong Eats</title>
+        <link rel="icon" href="images/eats-icon.jpeg">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <link rel="stylesheet" href="CSS/post.css">
+    </head>
+
+    <body>
+        <header>
+            <nav id="headernav">
+                <a href="/index.html">HOME</a> |
+                <a href="/blogs.html">BLOGS</a> |
+                <a href="/eats.html">EATS</a> |
+                <a href="/travels.html">TRAVELS</a> |
+                <a href="/labs.html">LABS</a>
+            </nav>
+        </header>
+
+        <main>
+            <details class="drop-down-header">
+                <summary>My Top 3 Favorite Food So Far (which are always changing)</summary>
+                <p>Top 1: Food Made by Grandma<br>
+                Top 2: Hot Pot 🍲<br>
+                Top 3: Seafood (all sorts) 🦞🦐🦪🐚</p>
+            </details>
+
+            <section class="search-bar">
+                <label class="search-prompt" for="search-prompt">SEARCH</label>
+                <input class="search-box" type="text" placeholder="enter keywords">
+                <button class="search-btn" type="submit">🔍</button>
+                <script>
+                    //grab detail post by the searched keyword
+                </script>
+            </section>
+
+            <section id="feedback-box">
+                <button id="feedback-btn" onclick="showContent()">Feedback?</button>
+                    <template>
+                        <form action="/action_page.php">
+                            <input type="text" name="answer">
+                            <label for="text">text</label><br>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </template>
+                    <script>
+                        //Placeholder for JS scripts
+                    </script>
+            </section>
+            
+        </main>
+        
+        <footer id="footer">
+            <p>Find me here: <a href="https://www.linkedin.com/in/haitongc/" target="_blank">LinkedIn</a>,
+                <a href="https://github.com/hchen7788" target="_blank">GitHub</a>,
+                <a href="mailto:haitongchen116@gmail.com" target="_blank">email</a>,
+                <a href="https://docs.google.com/document/d/1pymvXqyczpcKYYplnFrErOaaqzcPqVB7J3MQrqn1mv4/edit?usp=sharing" target="_blank">Resume</a></a></p>
+            <p>Copyright @Haitong Chen</p>
+        </footer>
+    </body>
+</html>
