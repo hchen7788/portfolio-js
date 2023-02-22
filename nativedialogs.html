@@ -5,8 +5,7 @@
         <title>Haitong's Portfolio</title>
         <link rel="icon" href="images/home-icon.jpeg">
         <link rel="stylesheet" href="CSS/styles.css">
-        <script src="JS/confirm.js"></script>
-        <script src="JS/prompt.js"></script>
+        <script src="JS/builtin.js"></script>
         <script type="module">
             import {customDialog} from 'JS/customdialog.js';
         </script>
@@ -16,17 +15,20 @@
         <br>
         <br>
         <!--alert-->
-        <button onclick="window.alert('alert message!');">Alert</button>
+        <button onclick="window.alert('Alert pressed!');">Alert</button>
 
         <!--confirm-->
         <button onClick="readFromConfirm()">Confirm</button>
-        <output id="out"></output>
         
         <!--unsafe collection of data-->
         <button onClick="unsafePrompt()">Prompt</button>
 
         <!--tagged template string-->
         <button onClick="safePrompt()">Safer Prompt</button>
+
+        <br>
+        <output id="confirmOut"></output>
+        <output id="promptOut"></output>
 
     </body>
 </html>
