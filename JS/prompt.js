@@ -1,0 +1,7 @@
+function unsafePrompt(){
+
+}
+
+function safePrompt(){
+    
+}

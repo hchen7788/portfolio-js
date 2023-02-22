@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="CSS/styles.css">
         <script src="JS/confirm.js"></script>
         <script src="JS/prompt.js"></script>
+        <script type="module">
+            import {customDialog} from 'JS/customdialog.js';
+        </script>
     </head>
     <body>
         <a href="/index.html">Link back to HOME</a>
@@ -20,10 +23,10 @@
         <output id="out"></output>
         
         <!--unsafe collection of data-->
-        <button>Prompt</button>
+        <button onClick="unsafePrompt()">Prompt</button>
 
         <!--tagged template string-->
-        <button>Safer Prompt</button>
+        <button onClick="safePrompt()">Safer Prompt</button>
 
     </body>
 </html>
