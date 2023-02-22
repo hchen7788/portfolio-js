@@ -6,15 +6,23 @@
         <link rel="icon" href="images/home-icon.jpeg">
         <link rel="stylesheet" href="CSS/styles.css">
         <script src="JS/confirm.js"></script>
+        <script src="JS/prompt.js"></script>
     </head>
     <body>
         <a href="/index.html">Link back to HOME</a>
         <br>
         <br>
+        <!--alert-->
         <button onclick="window.alert('alert message!');">Alert</button>
+
+        <!--confirm-->
         <button onClick="readFromConfirm()">Confirm</button>
         <output id="out"></output>
+        
+        <!--unsafe collection of data-->
         <button>Prompt</button>
+
+        <!--tagged template string-->
         <button>Safer Prompt</button>
 
     </body>
