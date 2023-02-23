@@ -2,7 +2,7 @@ let confirmMessage = "Confirm result: ";
 let promptMessage = "Prompt result: ";
 
 function confirmTag(result){
-    document.getElementById("confirmOut").innerHTML = `${confirmMessage}${result}`;
+    document.getElementById("out").innerHTML = `${confirmMessage}${result}`;
 }
 
 function readFromConfirm(){
@@ -10,7 +10,7 @@ function readFromConfirm(){
 }
 
 function promptTag(result){
-    document.getElementById("promptOut").innerHTML = `${promptMessage}${result}`;
+    document.getElementById("out").innerHTML = `${promptMessage}${result}`;
 }
 
 function unsafePrompt(){
@@ -18,12 +18,18 @@ function unsafePrompt(){
     if(name != null){
         promptTag(name);
     } else{
-        document.getElementById("promptOut").innerHTML = "User didn't enter anything";
+        document.getElementById("out").innerHTML = "User didn't enter anything";
     }
 }
 
 function safePrompt(){
-
+    let name = prompt("What is your name?");
+    let clean = DOMPurify.sanitize(name, { USE_PROFILES: { html: true } });
+    if(name != null){
+        promptTag(clean);
+    } else{
+        document.getElementById("out").innerHTML = "User didn't enter anything";
+    }
 }
 
 
