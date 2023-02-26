@@ -5,10 +5,8 @@
         <title>Haitong's Portfolio</title>
         <link rel="icon" href="images/home-icon.jpeg">
         <link rel="stylesheet" href="CSS/styles.css">
-        <script src="JS/builtin.js"></script>
-        <script type="module" src="./JS/customdialog.js">
-            import {showContent} from 'JS/customdialog.js';
-        </script>
+        <script async src="JS/builtin.js"></script>
+        <script async type="module" src="./JS/customdialog.js"></script>
         <script src="
             https://cdn.jsdelivr.net/npm/dompurify@3.0.0/dist/purify.min.js
         "></script>
@@ -37,8 +35,8 @@
         <section id="customBtn">
         <!--custom dialogs-->
         <!--alert-->
-        <button id="customAlertBtn" onclick="showContent(0)">Alert</button>
-        <template>
+        <button id="customAlertBtn">Alert</button>
+        <template id="alertTemplate">
             <dialog open>
                 <p>Alert pressed!</p>
                 <form method="dialog">
@@ -47,26 +45,34 @@
             </dialog>
             
         </template>
-        
-        
-        <!-- <script>
-            function showContent(){
-                var temp = document.getElementsByTagName("template")[0];
-                var clon = temp.content.cloneNode(true);
-                document.body.appendChild(clon);
-            }
-        </script> -->
-
 
 
         <!--confirm-->
-        <button onClick="readFromConfirm()">Confirm</button>
+        <button id="customConfirmBtn">Confirm</button>
+        <template id="confirmTemplate">
+            <dialog open>
+                <p>Do you confirm this?</p>
+                <form method="dialog">
+                    <button id="cancelFromConfirm" value="cancel">Cancel</button>
+                    <button id="okFromConfirm" value="default">Ok</button>
+                </form>
+            </dialog>
+            
+        </template>
         
         <!--unsafe collection of data-->
-        <button onClick="unsafePrompt()">Prompt</button>
-
-        <!--tagged template string-->
-        <button onClick="safePrompt()">Safer Prompt</button>
+        <button id="customPromptBtn">Prompt</button>
+        <template id="promptTemplate">
+            <dialog open>
+                <p>What is your name?</p>
+                <form method="dialog">
+                    <input type="text">
+                    <button>Cancel</button>
+                    <button>OK</button>
+                </form>
+            </dialog>
+            
+        </template>
 
         <br>
         <output id="customOut"></output>
