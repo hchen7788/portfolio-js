@@ -1,4 +1,3 @@
-
 function showBlogs(){
     let allBlogs = document.getElementsByClassName('crudBlog');
     allBlogs = Array.from(allBlogs)
@@ -7,12 +6,8 @@ function showBlogs(){
         let postBody = document.createElement('div')
         let el = document.createElement('p')
 
-        el.classList.add('id')
-        el.classList.add('title')
-        el.classList.add('date')
-        el.classList.add('summary')
-
         el.setAttribute('id', allBlogs[i].getAttribute('id'))
+        el.setAttribute('class', 'crudBlog')
         el.setAttribute('title', allBlogs[i].getAttribute('title'))
         el.setAttribute('date', allBlogs[i].getAttribute('date'))
         el.setAttribute('summary', allBlogs[i].getAttribute('summary'))
