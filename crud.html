@@ -48,7 +48,15 @@
                 <label for="summary">Summary:</label>
                 <input id="editSummaryInput" type="text" name="summary" value="Summary"><br>
                 <button>Cancel</button>
-                <button id="editSaveBtn">Save</button>
+                <button id="editSaveBtn" parentId="">Save</button>
+            </form>
+        </dialog>
+
+        <dialog id="deleteConfirmEntry">
+            <form method="dialog">
+                <p>Delete movie?</p>
+                <button>Cancel</button>
+                <button id="deleteConfirmBtn" parentId="">Ok</button>
             </form>
         </dialog>
     </main>

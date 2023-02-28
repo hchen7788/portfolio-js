@@ -83,7 +83,7 @@ function loadPage(){
         let editBtn = document.createElement('button')
         editBtn.innerText = "Edit"
         editBtn.setAttribute('class', 'editBtn')
-        editBtn.setAttribute('parentId', el.getAttribute('id'))
+        // editBtn.setAttribute('parentId', el.getAttribute('id'))
         editBtn.addEventListener('click', () => {
             console.log(i)
             editPost(i)
@@ -93,7 +93,7 @@ function loadPage(){
         deleteBtn.innerText = "Delete"
         deleteBtn.setAttribute('class', 'deleteBtn')
         deleteBtn.addEventListener('click', () => {
-            deletePost(el)
+            deletePost(i)
         })
         postBody.appendChild(editBtn)
         postBody.appendChild(deleteBtn)
@@ -103,7 +103,7 @@ function loadPage(){
 }
 
 function editPost(i) {
-    // let editBtn = document.querySelector("button[parentId=" + allBlogs[i].getAttribute('id') + "]");
+    //let editBtn = document.querySelector("button[parentId=" + allBlogs[i].getAttribute('id') + "]");
     let dia = document.getElementById('editBlogEntry')
 
     document.getElementById('editTitleInput').value = allBlogs[i].getAttribute('title')
@@ -125,24 +125,15 @@ function editPost(i) {
     })
 }
 
-function deletePost(el){
-    alert("trying to delete!")
-    // console.log(el)
-    // console.log(allBlogs[allBlogs.length - 1])
-    // console.log(el.getAttribute('title'))
-    // delete allBlogs[allBlogs.indexOf(el)]
+function deletePost(i){
+    let dia = document.getElementById('deleteConfirmEntry')
+    dia.showModal()
 
-    //console.log(allBlogs)
-    console.log(el)
-    console.log(allBlogs.indexOf(el))
-
-    let temp = el
-    el = allBlogs[allBlogs.length - 1]
-    allBlogs[allBlogs.length - 1] = temp
-
-    console.log(allBlogs)
-    // console.log(el)
-    // console.log(allBlogs[allBlogs.length - 1])
+    let okBtn = document.getElementById('deleteConfirmBtn')
+    okBtn.addEventListener('click', () => {
+        allBlogs.splice(i, 1);
+        loadPage();
+    });
 }
 
 
