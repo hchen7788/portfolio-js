@@ -27,7 +27,7 @@ function showCustomConfirm(){
     cancelBtn.addEventListener('click', () => {
         document.getElementById("customOut").innerHTML = `${confirmMessage}false`;
     });
-    okBtn.addEventListener('click', () =>{
+    okBtn.addEventListener('click', () => {
         document.getElementById("customOut").innerHTML = `${confirmMessage}true`;
     });
 

@@ -3,12 +3,12 @@ let allBlogs
 function createTemplate(){
     let addButton = document.getElementById("addBtn");
     addButton.addEventListener("click", function(){
-        var temp = document.getElementById("blogTemplate");
-        var clon = temp.content.cloneNode(true);
-        document.body.appendChild(clon);
+        // var temp = document.getElementById("blogEntry");
+        // var clon = temp.content.cloneNode(true);
+        // document.body.appendChild(clon);
+        let dia = document.getElementById('blogEntry')
+        dia.showModal()
     });
-
-    let box = document.getElementById('blogTemplate')
 }
 
 function savePost(){
@@ -49,9 +49,11 @@ function loadPage(){
         let editBtn = document.createElement('button')
         editBtn.innerText = "Edit"
         editBtn.setAttribute('class', 'editBtn')
+        editBtn.setAttribute('parentId', el.getAttribute('id'))
         editBtn.addEventListener('click', () => {
-            editPost()
+            editPost(el)
         })
+
         let deleteBtn = document.createElement('button')
         deleteBtn.innerText = "Delete"
         deleteBtn.setAttribute('class', 'deleteBtn')
@@ -65,8 +67,18 @@ function loadPage(){
     }
 }
 
-function editPost() {
-    alert("trying to edit!")
+function editPost(el) {
+    let editBtn = document.querySelector("button[parentId=" + el.getAttribute('id') + "]");
+    let dia = document.getElementById('blogEntry')
+
+    let inputTitle = document.getElementById('titleInput')
+    inputTitle.value = el.getAttribute('title')
+    let inputDate = document.getElementById('dateInput')
+    inputDate.value = el.getAttribute('date')
+    let inputSummary = document.getElementById('summaryInput')
+    inputSummary.value = el.getAttribute('summary')
+    dia.showModal()
+    
 }
 
 function deletePost(el){
@@ -75,7 +87,10 @@ function deletePost(el){
     // console.log(allBlogs[allBlogs.length - 1])
     // console.log(el.getAttribute('title'))
     // delete allBlogs[allBlogs.indexOf(el)]
-    console.log(allBlogs)
+
+    //console.log(allBlogs)
+    console.log(el)
+    console.log(allBlogs.indexOf(el))
 
     let temp = el
     el = allBlogs[allBlogs.length - 1]
