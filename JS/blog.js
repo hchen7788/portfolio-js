@@ -3,9 +3,11 @@ let allBlogs
 function createTemplate(){
     let addButton = document.getElementById("addBtn");
     addButton.addEventListener("click", function(){
-        // var temp = document.getElementById("blogEntry");
-        // var clon = temp.content.cloneNode(true);
-        // document.body.appendChild(clon);
+
+        document.getElementById('titleInput').value="Title"
+        document.getElementById('dateInput').value = "Date"
+        document.getElementById('summaryInput').value = "Summary"
+
         let dia = document.getElementById('blogEntry')
         dia.showModal()
     });
@@ -71,12 +73,9 @@ function editPost(el) {
     let editBtn = document.querySelector("button[parentId=" + el.getAttribute('id') + "]");
     let dia = document.getElementById('blogEntry')
 
-    let inputTitle = document.getElementById('titleInput')
-    inputTitle.value = el.getAttribute('title')
-    let inputDate = document.getElementById('dateInput')
-    inputDate.value = el.getAttribute('date')
-    let inputSummary = document.getElementById('summaryInput')
-    inputSummary.value = el.getAttribute('summary')
+    document.getElementById('titleInput').value = el.getAttribute('title')
+    document.getElementById('dateInput').value = el.getAttribute('date')
+    document.getElementById('summaryInput').value = el.getAttribute('summary')
     dia.showModal()
     
 }
