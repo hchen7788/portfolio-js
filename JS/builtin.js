@@ -37,5 +37,9 @@ function safePrompt(){
     }
 }
 
+function onmousedown() {
+    document.getElementById("out").innerHTML = "";
+}
+
 
 //<b onMouseOver="alert('pwned')">Roll Me</b>

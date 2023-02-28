@@ -27,7 +27,7 @@
         <button onClick="unsafePrompt()">Prompt</button>
 
         <!--tagged template string-->
-        <button onClick="safePrompt()">Safer Prompt</button>
+        <button onmousedown="clearContent()" onmouseup="safePrompt()">Safer Prompt</button>
 
         <br>
         <output id="out"></output>
