@@ -18,8 +18,27 @@
         <p id="p2" class="crudBlog" title="Post 2 Title" date="Post 2 Date" 
         summary="Post 2 summary here. This post is just a placeholder."></p>
 
+        <p id="p3" class="crudBlog" title="Post 3 Title" date="Post 3 Date" 
+        summary="Post 3 summary here. This post is just a placeholder."></p>
+
         <ul id="blogList"></ul>
         <button id="addBtn">Add Post</button>
-        
+
+        <template id="blogTemplate">
+            <dialog open>
+                <form method="dialog">
+                    <label for="title">Title:</label>
+                    <input id="titleInput" type="text" name="title" value="Title"><br>
+                    <label for="date">Date:</label>
+                    <input id="dateInput" type="text" name="date" value="Date"><br>
+                    <label for="summary">Summary:</label>
+                    <input id="summaryInput" type="text" name="summary" value="Summary"><br>
+                    <button>Cancel</button>
+                    <button id="saveBtn">Save</button>
+                </form>
+            </dialog>
+            
+        </template>
+
     </body>
 </html>

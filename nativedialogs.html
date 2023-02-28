@@ -6,6 +6,7 @@
         <link rel="icon" href="images/home-icon.jpeg">
         <link rel="stylesheet" href="CSS/styles.css">
         <script async src="JS/builtin.js"></script>
+        <script async src="JS/customdialog.js"></script>
         <script async type="module" src="./JS/customdialog.js"></script>
         <script src="
             https://cdn.jsdelivr.net/npm/dompurify@3.0.0/dist/purify.min.js
@@ -20,7 +21,7 @@
         <button onclick="window.alert('Alert pressed!');">Alert</button>
 
         <!--confirm-->
-        <button onClick="readFromConfirm()">Confirm</button>
+        <button onclick="readFromConfirm()">Confirm</button>
         
         <!--unsafe collection of data-->
         <button onClick="unsafePrompt()">Prompt</button>
@@ -30,53 +31,44 @@
 
         <br>
         <output id="out"></output>
-    </section>
 
-        <section id="customBtn">
         <!--custom dialogs-->
-        <!--alert-->
-        <button id="customAlertBtn">Alert</button>
-        <template id="alertTemplate">
-            <dialog open>
+        <section id="customBtn">
+
+            <!--alert-->
+            <button id="customAlertBtn" onclick="showCustomAlert()">Alert</button>
+            <dialog id="customAlertDialog">
                 <p>Alert pressed!</p>
                 <form method="dialog">
                     <button>OK</button>
                 </form>
             </dialog>
-            
-        </template>
 
 
-        <!--confirm-->
-        <button id="customConfirmBtn">Confirm</button>
-        <template id="confirmTemplate">
-            <dialog open>
+            <!--confirm-->
+            <button id="customConfirmBtn" onclick="showCustomConfirm()">Confirm</button>
+            <dialog id="customConfirmDialog">
                 <p>Do you confirm this?</p>
                 <form method="dialog">
                     <button id="cancelFromConfirm" value="cancel">Cancel</button>
                     <button id="okFromConfirm" value="default">Ok</button>
                 </form>
             </dialog>
-            
-        </template>
         
-        <!--unsafe collection of data-->
-        <button id="customPromptBtn">Prompt</button>
-        <template id="promptTemplate">
-            <dialog open>
+            <!--unsafe collection of data-->
+            <button id="customPromptBtn" onclick="showCustomPrompt()">Prompt</button>
+            <dialog id ="customPromptDialog">
                 <p>What is your name?</p>
                 <form method="dialog">
-                    <input type="text">
-                    <button>Cancel</button>
-                    <button>OK</button>
+                    <input id="customInput" type="text">
+                    <button id="cancelFromPrompt" onclick="emptyPromptValue()">Cancel</button>
+                    <button id="okFromPrompt" onclick="changePromptValue()">OK</button>
                 </form>
             </dialog>
-            
-        </template>
 
-        <br>
-        <output id="customOut"></output>
-    </section>
+            <br>
+            <output id="customOut"></output>
+        </section>
 
     </body>
 </html>

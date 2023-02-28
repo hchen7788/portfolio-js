@@ -14,12 +14,17 @@ function promptTag(result){
 }
 
 function unsafePrompt(){
+    let output = document.getElementById("out")
     let name = prompt("What is your name?");
+
+    setTimeout(() => {
+    //let name = prompt("What is your name?");
     if(name != null){
         promptTag(name);
     } else{
-        document.getElementById("out").innerHTML = "User didn't enter anything";
+        output.innerHTML = "User didn't enter anything";
     }
+}, 0);
 }
 
 function safePrompt(){
