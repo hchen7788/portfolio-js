@@ -137,5 +137,4 @@ function deletePost(i){
 }
 
 
-//window.onload = loadPage
 window.addEventListener('DOMContentLoaded', setup)
