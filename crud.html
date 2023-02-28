@@ -9,9 +9,11 @@
         <script src="
             https://cdn.jsdelivr.net/npm/dompurify@3.0.0/dist/purify.min.js
         "></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     </head>
     <body>
         <h1>List of posts</h1>
+        <main id="pageMain">
         <p id="p1" class="crudBlog" title="Post 1 Title" date="Post 1 Date" 
         summary="Post 1 summary here. This post is just a placeholder."></p>
 
@@ -24,18 +26,31 @@
         <ul id="blogList"></ul>
         <button id="addBtn">Add Post</button>
 
-        <dialog id="blogEntry">
+        <dialog id="addBlogEntry">
             <form method="dialog">
                 <label for="title">Title:</label>
-                <input id="titleInput" type="text" name="title" value="Title"><br>
+                <input id="addTitleInput" type="text" name="title" value="Title"><br>
                 <label for="date">Date:</label>
-                <input id="dateInput" type="text" name="date" value="Date"><br>
+                <input id="addDateInput" type="text" name="date" value="Date"><br>
                 <label for="summary">Summary:</label>
-                <input id="summaryInput" type="text" name="summary" value="Summary"><br>
+                <input id="addSummaryInput" type="text" name="summary" value="Summary"><br>
                 <button>Cancel</button>
-                <button id="saveBtn">Save</button>
+                <button id="addSaveBtn">Save</button>
             </form>
         </dialog>
 
+        <dialog id="editBlogEntry">
+            <form method="dialog">
+                <label for="title">Title:</label>
+                <input id="editTitleInput" type="text" name="title" value="Title"><br>
+                <label for="date">Date:</label>
+                <input id="editDateInput" type="text" name="date" value="Date"><br>
+                <label for="summary">Summary:</label>
+                <input id="editSummaryInput" type="text" name="summary" value="Summary"><br>
+                <button>Cancel</button>
+                <button id="editSaveBtn">Save</button>
+            </form>
+        </dialog>
+    </main>
     </body>
 </html>

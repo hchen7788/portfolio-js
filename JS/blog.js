@@ -1,29 +1,64 @@
 let allBlogs
 
 function createTemplate(){
-    let addButton = document.getElementById("addBtn");
-    addButton.addEventListener("click", function(){
+    let addBtn = document.getElementById("addBtn");
+    addBtn.addEventListener("click", function(){
 
-        document.getElementById('titleInput').value="Title"
-        document.getElementById('dateInput').value = "Date"
-        document.getElementById('summaryInput').value = "Summary"
+        document.getElementById('addTitleInput').value="Title"
+        document.getElementById('addDateInput').value = "Date"
+        document.getElementById('addSummaryInput').value = "Summary"
 
-        let dia = document.getElementById('blogEntry')
+        let dia = document.getElementById('addBlogEntry')
         dia.showModal()
     });
+
+    let saveBtn = document.getElementById("addSaveBtn");
+    saveBtn.addEventListener('click', () => {
+        alert("saving from add!")
+        addPost()
+    })
 }
 
-function savePost(){
-    let saveTitle = document.querySelector('titleInput').value
+function addPost(){
+    alert("adding new post!")
+    let newTitle = document.getElementById('addTitleInput').value
+    let newDate = document.getElementById('addTitleInput').value
+    let newSummary = document.getElementById('addTitleInput').value
+
+    let newEl = document.createElement('p')
+    newEl.setAttribute('id', 'p4')
+    newEl.setAttribute('class', 'crudBlog')
+    newEl.setAttribute('title', newTitle)
+    newEl.setAttribute('date', newDate)
+    newEl.setAttribute('summary', newSummary)
+    allBlogs.push(newEl)
+
+    console.log(allBlogs.length)
+    loadPage()
+}
+
+function setup(){
+    createTemplate()
+
+    allBlogs = document.getElementsByClassName('crudBlog');
+    allBlogs = Array.from(allBlogs)
+
+    loadPage()
 }
 
 function loadPage(){
 
-    createTemplate()
-    // savePost()
+    // createTemplate()
 
-    allBlogs = document.getElementsByClassName('crudBlog');
-    allBlogs = Array.from(allBlogs)
+    // allBlogs = document.getElementsByClassName('crudBlog');
+    // allBlogs = Array.from(allBlogs)
+
+    $(document).ready(function(){
+        $('div').remove();
+    })
+    console.log(allBlogs.length)
+
+
 
     if(allBlogs.length == 0){
         let postBody = document.createElement('p')
@@ -71,13 +106,17 @@ function loadPage(){
 
 function editPost(el) {
     let editBtn = document.querySelector("button[parentId=" + el.getAttribute('id') + "]");
-    let dia = document.getElementById('blogEntry')
+    let dia = document.getElementById('editBlogEntry')
 
-    document.getElementById('titleInput').value = el.getAttribute('title')
-    document.getElementById('dateInput').value = el.getAttribute('date')
-    document.getElementById('summaryInput').value = el.getAttribute('summary')
+    document.getElementById('editTitleInput').value = el.getAttribute('title')
+    document.getElementById('editDateInput').value = el.getAttribute('date')
+    document.getElementById('editSummaryInput').value = el.getAttribute('summary')
     dia.showModal()
     
+    let saveBtn = document.getElementById("editSaveBtn");
+    saveBtn.addEventListener('click', () => {
+        alert("saving from edit!")
+    })
 }
 
 function deletePost(el){
@@ -100,9 +139,6 @@ function deletePost(el){
     // console.log(allBlogs[allBlogs.length - 1])
 }
 
-function createPost(){
-    alert('trying to create a new post!')
-}
 
 //window.onload = loadPage
-window.addEventListener('DOMContentLoaded', loadPage)
+window.addEventListener('DOMContentLoaded', setup)
