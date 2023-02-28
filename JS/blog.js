@@ -14,16 +14,14 @@ function createTemplate(){
 
     let saveBtn = document.getElementById("addSaveBtn");
     saveBtn.addEventListener('click', () => {
-        alert("saving from add!")
         addPost()
     })
 }
 
 function addPost(){
-    alert("adding new post!")
     let newTitle = document.getElementById('addTitleInput').value
-    let newDate = document.getElementById('addTitleInput').value
-    let newSummary = document.getElementById('addTitleInput').value
+    let newDate = document.getElementById('addDateInput').value
+    let newSummary = document.getElementById('addSummaryInput').value
 
     let newEl = document.createElement('p')
     newEl.setAttribute('id', 'p4')
@@ -33,7 +31,6 @@ function addPost(){
     newEl.setAttribute('summary', newSummary)
     allBlogs.push(newEl)
 
-    console.log(allBlogs.length)
     loadPage()
 }
 
@@ -53,13 +50,13 @@ function loadPage(){
     // allBlogs = document.getElementsByClassName('crudBlog');
     // allBlogs = Array.from(allBlogs)
 
+    //clear existing posts on page
     $(document).ready(function(){
         $('div').remove();
     })
-    console.log(allBlogs.length)
 
 
-
+    //start loading fresh
     if(allBlogs.length == 0){
         let postBody = document.createElement('p')
         postBody.innerText = 'No Blog currently listed'
@@ -88,7 +85,8 @@ function loadPage(){
         editBtn.setAttribute('class', 'editBtn')
         editBtn.setAttribute('parentId', el.getAttribute('id'))
         editBtn.addEventListener('click', () => {
-            editPost(el)
+            console.log(i)
+            editPost(i)
         })
 
         let deleteBtn = document.createElement('button')
@@ -104,18 +102,26 @@ function loadPage(){
     }
 }
 
-function editPost(el) {
-    let editBtn = document.querySelector("button[parentId=" + el.getAttribute('id') + "]");
+function editPost(i) {
+    // let editBtn = document.querySelector("button[parentId=" + allBlogs[i].getAttribute('id') + "]");
     let dia = document.getElementById('editBlogEntry')
 
-    document.getElementById('editTitleInput').value = el.getAttribute('title')
-    document.getElementById('editDateInput').value = el.getAttribute('date')
-    document.getElementById('editSummaryInput').value = el.getAttribute('summary')
+    document.getElementById('editTitleInput').value = allBlogs[i].getAttribute('title')
+    document.getElementById('editDateInput').value = allBlogs[i].getAttribute('date')
+    document.getElementById('editSummaryInput').value = allBlogs[i].getAttribute('summary')
     dia.showModal()
     
     let saveBtn = document.getElementById("editSaveBtn");
     saveBtn.addEventListener('click', () => {
-        alert("saving from edit!")
+        let newTitle = document.getElementById('editTitleInput').value
+        let newDate = document.getElementById('editDateInput').value
+        let newSummary = document.getElementById('editSummaryInput').value
+
+        allBlogs[i].setAttribute('title', newTitle)
+        allBlogs[i].setAttribute('date', newDate)
+        allBlogs[i].setAttribute('summary', newSummary)
+
+        loadPage()
     })
 }
 
