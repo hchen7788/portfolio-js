@@ -21,10 +21,10 @@
         <button onclick="window.alert('Alert pressed!');">Alert</button>
 
         <!--confirm-->
-        <button onclick="readFromConfirm()">Confirm</button>
+        <button onmousedown="clearContent()" onmouseup="readFromConfirm()">Confirm</button>
         
         <!--unsafe collection of data-->
-        <button onClick="unsafePrompt()">Prompt</button>
+        <button onmousedown="clearContent()" onmouseup="unsafePrompt()">Prompt</button>
 
         <!--tagged template string-->
         <button onmousedown="clearContent()" onmouseup="safePrompt()">Safer Prompt</button>
