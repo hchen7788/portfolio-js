@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Haitong's Portfolio</title>
+        <link rel="icon" href="images/home-icon.jpeg">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <script async src="JS/customdialog.js"></script>
+        <script async type="module" src="./JS/customdialog.js"></script>
+        <script src="
+            https://cdn.jsdelivr.net/npm/dompurify@3.0.0/dist/purify.min.js
+        "></script>
+    </head>
+    <body>
+        <a href="/index.html">Link back to HOME</a>
+        <br>
+        <br>
+        <a href="/customdialogs.html">Link to customDialogs</a>
+        <br>
+        <br>
+        <a href="/crud.html">Link to blogs</a>
+        <br>
+        <br>
+        <a href="/styledcrud.html">Link to styled blogs</a>
+        <br>
+        <br>
+        
+        <!--custom dialogs-->
+        <section id="customBtn">
+
+            <!--alert-->
+            <button id="customAlertBtn" onclick="showCustomAlert()">Alert</button>
+            <dialog id="customAlertDialog">
+                <p>Alert pressed!</p>
+                <form method="dialog">
+                    <button>OK</button>
+                </form>
+            </dialog>
+
+
+            <!--confirm-->
+            <button id="customConfirmBtn" onclick="showCustomConfirm()">Confirm</button>
+            <dialog id="customConfirmDialog">
+                <p>Do you confirm this?</p>
+                <form method="dialog">
+                    <button id="cancelFromConfirm" value="cancel">Cancel</button>
+                    <button id="okFromConfirm" value="default">Ok</button>
+                </form>
+            </dialog>
+        
+            <!--unsafe collection of data-->
+            <button id="customPromptBtn" onclick="showCustomPrompt()">Prompt</button>
+            <dialog id ="customPromptDialog">
+                <p>What is your name?</p>
+                <form method="dialog">
+                    <input id="customInput" type="text">
+                    <button id="cancelFromPrompt" onclick="emptyPromptValue()">Cancel</button>
+                    <button id="okFromPrompt" onclick="changePromptValue()">OK</button>
+                </form>
+            </dialog>
+
+            <br>
+            <output id="customOut"></output>
+        </section>
+
+    </body>
+</html>
