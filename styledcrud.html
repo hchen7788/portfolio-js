@@ -23,6 +23,43 @@
             p {
                 text-align: left;
             }
+
+            button {
+                font-size: 15px;
+                background-color: #fef8c66c;
+                border-radius: 15px;
+                border-width: 0.1px;
+                border-color: #AAA9A9;
+                padding: 5px;
+                margin-inline: 5px;
+                cursor: pointer;
+                align-items: center;
+            }
+
+            .inDialogBtn{
+                width: 70px;
+                height: 40px;
+                border-radius: 20px;
+                margin-top: 10px;
+            }
+
+            label{
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            input{
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            dialog{
+                text-align: center;
+            }
+
+            dialog p{
+                text-align: center;
+            }
         </style>
     
     </head>
@@ -50,9 +87,9 @@
                 <label for="date">Date:</label>
                 <input id="addDateInput" type="text" name="date" value="Date"><br>
                 <label for="summary">Summary:</label>
-                <input id="addSummaryInput" type="text" name="summary" value="Summary"><br>
-                <button>Cancel</button>
-                <button id="addSaveBtn">Save</button>
+                <input id="addSummaryInput" type="text" name="summary" value="Summary" class="summaryInput"><br>
+                <button class="inDialogBtn">Cancel</button>
+                <button id="addSaveBtn" class="inDialogBtn">Save</button>
             </form>
         </dialog>
 
@@ -63,17 +100,17 @@
                 <label for="date">Date:</label>
                 <input id="editDateInput" type="text" name="date" value="Date"><br>
                 <label for="summary">Summary:</label>
-                <input id="editSummaryInput" type="text" name="summary" value="Summary"><br>
-                <button>Cancel</button>
-                <button id="editSaveBtn" parentId="">Save</button>
+                <input id="editSummaryInput" type="text" name="summary" value="Summary" class="summaryInput"><br>
+                <button class="inDialogBtn">Cancel</button>
+                <button id="editSaveBtn" class="inDialogBtn">Save</button>
             </form>
         </dialog>
 
         <dialog id="deleteConfirmEntry">
             <form method="dialog">
                 <p>Delete movie?</p>
-                <button>Cancel</button>
-                <button id="deleteConfirmBtn" parentId="">Ok</button>
+                <button class="inDialogBtn">Cancel</button>
+                <button id="deleteConfirmBtn" class="inDialogBtn">Ok</button>
             </form>
         </dialog>
     </main>

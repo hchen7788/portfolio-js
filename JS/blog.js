@@ -85,7 +85,7 @@ function loadPage(){
         editBtn.setAttribute('class', 'editBtn')
         // editBtn.setAttribute('parentId', el.getAttribute('id'))
         editBtn.addEventListener('click', () => {
-            console.log(i)
+            console.log("index " + i + " is pressed")
             editPost(i)
         })
 
@@ -93,6 +93,7 @@ function loadPage(){
         deleteBtn.innerText = "Delete"
         deleteBtn.setAttribute('class', 'deleteBtn')
         deleteBtn.addEventListener('click', () => {
+            console.log("index " + i + " is pressed")
             deletePost(i)
         })
         postBody.appendChild(editBtn)
@@ -113,6 +114,7 @@ function editPost(i) {
     
     let saveBtn = document.getElementById("editSaveBtn");
     saveBtn.addEventListener('click', () => {
+        console.log("index " + i + " is executed")
         let newTitle = document.getElementById('editTitleInput').value
         let newDate = document.getElementById('editDateInput').value
         let newSummary = document.getElementById('editSummaryInput').value
@@ -120,9 +122,11 @@ function editPost(i) {
         allBlogs[i].setAttribute('title', newTitle)
         allBlogs[i].setAttribute('date', newDate)
         allBlogs[i].setAttribute('summary', newSummary)
+        console.log("index " + i + " got changed!")
 
         loadPage()
     })
+    saveBtn.removeEventListener();
 }
 
 function deletePost(i){
@@ -131,9 +135,13 @@ function deletePost(i){
 
     let okBtn = document.getElementById('deleteConfirmBtn')
     okBtn.addEventListener('click', () => {
+        console.log("index " + i + " is executed")
         allBlogs.splice(i, 1);
+        console.log("index " + i + " got deleted!")
         loadPage();
     });
+
+    
 }
 
 

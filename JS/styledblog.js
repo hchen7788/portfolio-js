@@ -82,16 +82,13 @@ function loadPage(){
 
         let editBtn = document.createElement('button')
         editBtn.setAttribute('class', 'fa-solid fa-pen-to-square')
-        // editBtn.innerText = "Edit"
         // editBtn.setAttribute('class', 'editBtn')
-        // editBtn.setAttribute('parentId', el.getAttribute('id'))
         editBtn.addEventListener('click', () => {
             console.log(i)
             editPost(i)
         })
 
         let deleteBtn = document.createElement('button')
-        // deleteBtn.innerText = "Delete"
         // deleteBtn.setAttribute('class', 'deleteBtn')
         deleteBtn.setAttribute('class', 'fa-solid fa-trash')
         deleteBtn.addEventListener('click', () => {
