@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="CSS/styles.css">
         <link rel="stylesheet" href="CSS/intro.css">
         <link rel="stylesheet" href="CSS/detailexp.css">
+        <script src="./JS/framework.js"></script>
     </head>
     
     <!-- Google tag (gtag.js) -->
@@ -229,17 +230,27 @@
         </section>
 
         <section id="feedback-box">
-            <button id="feedback-btn" onclick="showContent()">Feedback?</button>
-                <template>
+            <button id="feedback-btn" onclick="showFeedbackDialog()">Feedback?</button>
+                <!-- <template>
                     <form action="/action_page.php">
                         <input type="text" name="answer">
                         <label for="text">text</label><br>
                         <input type="submit" value="Submit">
                     </form>
-                </template>
-                <script>
-                    //Placeholder for JS scripts
-                </script>
+                </template> -->
+                <dialog id="feedbackDialog">
+                    <p>feedback welcomed!!</p>
+                    <form method="dialog">
+                        <label for="feedbackName">Your name:</label>
+                        <input id="feedbackNameInput" type="text" name="feedbackName" value=""><br>
+                        <label for="feedbackContact">Date:</label>
+                        <input id="feedbackContactInput" type="text" name="feedbackContact" value=""><br>
+                        <label for="feedbackContent">Summary:</label>
+                        <input id="feedbackContentInput" type="text" name="feedbackContent" value=""><br>
+                        <button id="cancelFromFeedback" value="cancel">Cancel</button>
+                        <button id="submitFromConfirm" value="default">Submit</button>
+                    </form>
+                </dialog>
         </section>
 
         </main>
