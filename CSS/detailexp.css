@@ -21,14 +21,21 @@
 
 #detailexp div{
     padding: 50px;
+    margin-bottom: 30px;
+    height: fit-content;
+    background-color: blue;
 }
 
 #detailexp section{
     padding: 30px;
+    margin-bottom: 50px;
+    background-color: red;
 }
 
 #detailexp li{
     list-style-type: none;
+    margin-bottom: 100px;
+    background-color: yellow;
 }
 
 .exp-text{
