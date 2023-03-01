@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "algoliasearch": "^4.14.3",
     "dompurify": "^3.0.0"
   },
   "devDependencies": {},
