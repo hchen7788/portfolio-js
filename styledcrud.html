@@ -55,16 +55,26 @@
 
             dialog{
                 text-align: center;
+                border-radius: 15px;
+                border-width: 2px;
+                border-color: #AAA9A9;
             }
 
             dialog p{
                 text-align: center;
             }
+
+            .crudBlog{
+                background-color:#f7f7c14c;
+                border-radius: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
         </style>
     
     </head>
     <body style="margin-top: 20px; margin-top: 20px;">
-        <h1 style="text-align: center;">List of posts</h1>
+        <h1 style="text-align: center;">List of Posts</h1>
         <main id="pageMain">
         <p id="p1" class="crudBlog" title="Post 1 Title" date="Post 1 Date" 
         summary="Post 1 summary here. This post is just a placeholder. Let's make a longer summary to see how it looks like on the page."></p>
@@ -108,7 +118,7 @@
 
         <dialog id="deleteConfirmEntry">
             <form method="dialog">
-                <p>Delete movie?</p>
+                <p>Delete this post?</p>
                 <button class="inDialogBtn">Cancel</button>
                 <button id="deleteConfirmBtn" class="inDialogBtn">Ok</button>
             </form>

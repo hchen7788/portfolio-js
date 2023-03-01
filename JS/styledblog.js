@@ -74,9 +74,12 @@ function loadPage(){
         el.setAttribute('date', allBlogs[i].getAttribute('date'))
         el.setAttribute('summary', allBlogs[i].getAttribute('summary'))
 
+        // print blog
         el.innerText = `${el.getAttribute('title')}
-        Date: ${el.getAttribute('date')}
-        Summary: ${el.getAttribute('summary')}`
+
+        ${el.getAttribute('date')}
+        
+        ${el.getAttribute('summary')}`
 
         postBody.appendChild(el)
 

@@ -45,11 +45,6 @@ function setup(){
 
 function loadPage(){
 
-    // createTemplate()
-
-    // allBlogs = document.getElementsByClassName('crudBlog');
-    // allBlogs = Array.from(allBlogs)
-
     //clear existing posts on page
     $(document).ready(function(){
         $('div').remove();
