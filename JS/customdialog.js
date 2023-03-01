@@ -17,30 +17,35 @@ function showCustomAlert(){
 
 
 function showCustomConfirm(){
-    let btn = document.getElementById("customConfirmBtn");
-    let dia = document.getElementById('customConfirmDialog')
-    dia.showModal()
+    clearCustomContent()
+    
+    setTimeout(() => {
+        let btn = document.getElementById("customConfirmBtn");
+        let dia = document.getElementById('customConfirmDialog')
+        dia.showModal()
 
-    let cancelBtn = document.getElementById('cancelFromConfirm');
-    let okBtn = document.getElementById('okFromConfirm');
+        let cancelBtn = document.getElementById('cancelFromConfirm');
+        let okBtn = document.getElementById('okFromConfirm');
 
-    cancelBtn.addEventListener('click', () => {
-        document.getElementById("customOut").innerHTML = `${confirmMessage}false`;
-    });
-    okBtn.addEventListener('click', () => {
-        document.getElementById("customOut").innerHTML = `${confirmMessage}true`;
-    });
+        cancelBtn.addEventListener('click', () => {
+            document.getElementById("customOut").innerHTML = `${confirmMessage}false`;
+        });
+        okBtn.addEventListener('click', () => {
+            document.getElementById("customOut").innerHTML = `${confirmMessage}true`;
+        });
+    }, 0);
 
 }
 
 
 function showCustomPrompt(){
-    // let button = document.getElementById("customPromptBtn");
-    // button.addEventListener("click", () => {
-    //     var temp = document.getElementById("promptTemplate");
-    //     var clon = temp.content.cloneNode(true);
-    //     document.body.appendChild(clon);
-    // });
+    clearCustomContent()
+    
+    setTimeout(() => {
+        let btn = document.getElementById('customPromptBtn')
+        let dia = document.getElementById('customPromptDialog')
+        dia.showModal()
+    }, 0);
 
     let btn = document.getElementById('customPromptBtn')
     let dia = document.getElementById('customPromptDialog')
@@ -62,6 +67,10 @@ function changePromptValue(){
     //clean up input field
     let inputField = document.getElementById('customInput')
     inputField.value = ""
+}
+
+function clearCustomContent() {
+    document.getElementById("customOut").innerHTML = "";
 }
 
 // document.addEventListener('DOMContentLoaded', showCustomAlert());
