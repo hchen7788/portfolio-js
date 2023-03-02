@@ -3,7 +3,7 @@
 // if localStorage is empty, make the items letiable an empty array
 // let items = JSON.parse(localStorage.getItem("post-list")) || [];
 let items = JSON.parse(localStorage.getItem("post-list")) || [];
-// if(items.length == 0){
+if(items.length == 0){
     items = [{
         Title: "Post 1 Title",
         Date: "Post 1 Date",
@@ -19,7 +19,7 @@ let items = JSON.parse(localStorage.getItem("post-list")) || [];
         Date: "Post 3 Date",
         Summary: "Post 3 Summary"
     }];
-//}
+}
 
 localStorage.setItem("post-list", JSON.stringify(items));
 
@@ -135,21 +135,5 @@ function listItems() {
 
 // function to run when page loads
 (function () {
-    // items.push({
-    //     Title: "Post 1 Title",
-    //     Date: "Post 1 Date",
-    //     Summary: "Post 1 Summary"
-    // });
-    // items.push({
-    //     Title: "Post 2 Title",
-    //     Date: "Post 2 Date",
-    //     Summary: "Post 2 Summary"
-    // });
-    // items.push({
-    //     Title: "Post 3 Title",
-    //     Date: "Post 3 Date",
-    //     Summary: "Post 3 Summary"
-    // });
-    // localStorage.setItem("post-list", JSON.stringify(items));
     listItems();
 })();
