@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Haitong's Portfolio</title>
+        <link rel="icon" href="images/home-icon.jpeg">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <script src="./JS/trythis.js"></script>
+        <script src="
+            https://cdn.jsdelivr.net/npm/dompurify@3.0.0/dist/purify.min.js
+        "></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1 id="headertext">List of posts</h1>
+        <main id="pageMain">
+            <ul id="blogList">
+                <!-- <li>Title: Post 1 Title
+                    <br>
+                    Date: Post 1 Date
+                    <br>
+                    Summary: Post 1 summary here. This post is just a placeholder
+                    <br>
+                    <button class="label alert" onclick="editPrompt(0)">Edit</button>
+                    <button class="label alert" onclick="deletePrompt(0)">Delete</button></li>
+                </li>
+
+                <li>Title: Post 2 Title
+                    <br>
+                    Date: Post 2 Date
+                    <br>
+                    Summary: Post 2 summary here. This post is just a placeholder
+                    <br>
+                    <button class="label alert" onclick="editPrompt(1)">Edit</button>
+                    <button class="label alert" onclick="deletePrompt(1)">Delete</button></li>
+                </li>
+
+                <li>Title: Post 3 Title
+                    <br>
+                    Date: Post 3 Date
+                    <br>
+                    Summary: Post 3 summary here. This post is just a placeholder
+                    <br>
+                    <button class="label alert" onclick="editPrompt(2)">Edit</button>
+                    <button class="label alert" onclick="deletePrompt(2)">Delete</button></li>
+                </li> -->
+
+                <!-- <li id="p2" class="crudBlog" title="Post 2 Title" date="Post 2 Date" 
+                summary="Post 2 summary here. This post is just a placeholder."></li>
+
+                <li id="p3" class="crudBlog" title="Post 3 Title" date="Post 3 Date" 
+                summary="Post 3 summary here. This post is just a placeholder."></li> -->
+            </ul>
+
+        <button id="addBtn" onclick="addPrompt()">Add Post</button>
+
+        <dialog id="addBlogEntry">
+            <form method="dialog">
+                <label for="title">Title:</label>
+                <input id="addTitleInput" type="text" name="title" value="Title"><br>
+                <label for="date">Date:</label>
+                <input id="addDateInput" type="text" name="date" value="Date"><br>
+                <label for="summary">Summary:</label>
+                <input id="addSummaryInput" type="text" name="summary" value="Summary"><br>
+                <button>Cancel</button>
+                <button id="addSaveBtn">Save</button>
+            </form>
+        </dialog>
+
+        <dialog id="editBlogEntry">
+            <form method="dialog">
+                <label for="title">Title:</label>
+                <input id="editTitleInput" type="text" name="title" value="Title"><br>
+                <label for="date">Date:</label>
+                <input id="editDateInput" type="text" name="date" value="Date"><br>
+                <label for="summary">Summary:</label>
+                <input id="editSummaryInput" type="text" name="summary" value="Summary"><br>
+                <button>Cancel</button>
+                <button id="editSaveBtn" parentId="">Save</button>
+            </form>
+        </dialog>
+
+        <dialog id="deleteConfirmEntry">
+            <form method="dialog">
+                <p>Delete this post?</p>
+                <button>Cancel</button>
+                <button id="deleteConfirmBtn">Ok</button>
+            </form>
+        </dialog>
+    </main>
+    </body>
+</html>
