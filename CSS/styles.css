@@ -92,3 +92,20 @@ a:hover{
 #feedback-btn:active{
     background-color: aliceblue;
 }
+
+.dialogBox {
+    text-align: center;
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: #AAA9A9;
+}
+
+.dialogBtn {
+    font-size: 15px;
+    background-color: #fef8c66c;
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}

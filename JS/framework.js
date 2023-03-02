@@ -5,6 +5,7 @@ function showFeedbackDialog(){
     dia.showModal()
 
     let submitBtn = document.getElementById('submitFromFeedback')
+    
     submitBtn.addEventListener('click', () => {
         let nameInput = document.getElementById('feedbackNameInput').value
         let contactInput = document.getElementById('feedbackContactInput').value

@@ -10,6 +10,8 @@
     width: 60%;
     height: auto;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 #detailexp img {
@@ -22,7 +24,7 @@
 #detailexp div{
     padding: 50px;
     margin-bottom: 30px;
-    height: fit-content;
+    height: inherit;
 }
 
 #detailexp section{

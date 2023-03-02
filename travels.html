@@ -43,13 +43,13 @@
                 <label class="search-prompt" for="search-prompt">SEARCH</label>
                 <input id="search-post" class="search-box" type="text" placeholder="enter keywords">
                 <button class="search-btn" type="submit" onclick="searchPost()">🔍</button>
-                <dialog id="searchDialog">
+                <dialog id="searchDialog" class="dialogBox">
                     <p>You have searched for: </p>
                     <p id="searchInput"></p>
                     <p>Search result: </p>
                     <p>No matching post at this moment!</p>
                     <form method="dialog">
-                        <button id="okFromConfirm" value="default">Ok</button>
+                        <button id="okFromConfirm" class="dialogBtn" value="default">OK</button>
                     </form>
                 </dialog>
             </section>
@@ -63,7 +63,7 @@
                             <input type="submit" value="Submit">
                         </form>
                     </template> -->
-                    <dialog id="feedbackDialog">
+                    <dialog id="feedbackDialog" class="dialogBox">
                         <p>feedback welcomed!!</p>
                         <form method="dialog">
                             <label for="feedbackName">Your name:</label>
@@ -72,8 +72,8 @@
                             <input id="feedbackContactInput" type="text" name="feedbackContact" value=""><br>
                             <label for="feedbackContent">Feedback:</label>
                             <input id="feedbackContentInput" type="text" name="feedbackContent" value=""><br>
-                            <button id="cancelFromFeedback" value="cancel">Cancel</button>
-                            <button id="submitFromFeedback" value="default">Submit</button>
+                            <button id="cancelFromFeedback" value="cancel" class="dialogBtn">Cancel</button>
+                            <button id="submitFromFeedback" value="default" class="dialogBtn">Submit</button>
                         </form>
                     </dialog>
             </section>
