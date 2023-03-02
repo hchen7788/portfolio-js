@@ -109,3 +109,8 @@ a:hover{
     margin-top: 10px;
     cursor: pointer;
 }
+
+.dialogBox label{
+    display: block;
+    margin-bottom: 5px;
+}
