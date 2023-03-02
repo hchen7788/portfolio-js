@@ -5,7 +5,7 @@
         <title>Haitong's Portfolio</title>
         <link rel="icon" href="images/home-icon.jpeg">
         <link rel="stylesheet" href="CSS/styles.css">
-        <script async type="module" src="./JS/blog.js"></script>
+        <script src="./JS/blog.js"></script>
         <script src="
             https://cdn.jsdelivr.net/npm/dompurify@3.0.0/dist/purify.min.js
         "></script>
@@ -14,17 +14,39 @@
     <body>
         <h1>List of posts</h1>
         <main id="pageMain">
-        <p id="p1" class="crudBlog" title="Post 1 Title" date="Post 1 Date" 
-        summary="Post 1 summary here. This post is just a placeholder."></p>
+            <ul id="blogList">
+                <!-- <li>Title: Post 1 Title
+                    <br>
+                    Date: Post 1 Date
+                    <br>
+                    Summary: Post 1 summary here. This post is just a placeholder
+                    <br>
+                    <button class="label alert" onclick="editPrompt(0)">Edit</button>
+                    <button class="label alert" onclick="deletePrompt(0)">Delete</button></li>
+                </li>
 
-        <p id="p2" class="crudBlog" title="Post 2 Title" date="Post 2 Date" 
-        summary="Post 2 summary here. This post is just a placeholder."></p>
+                <li>Title: Post 2 Title
+                    <br>
+                    Date: Post 2 Date
+                    <br>
+                    Summary: Post 2 summary here. This post is just a placeholder
+                    <br>
+                    <button class="label alert" onclick="editPrompt(1)">Edit</button>
+                    <button class="label alert" onclick="deletePrompt(1)">Delete</button></li>
+                </li>
 
-        <p id="p3" class="crudBlog" title="Post 3 Title" date="Post 3 Date" 
-        summary="Post 3 summary here. This post is just a placeholder."></p>
+                <li>Title: Post 3 Title
+                    <br>
+                    Date: Post 3 Date
+                    <br>
+                    Summary: Post 3 summary here. This post is just a placeholder
+                    <br>
+                    <button class="label alert" onclick="editPrompt(2)">Edit</button>
+                    <button class="label alert" onclick="deletePrompt(2)">Delete</button></li>
+                </li> -->
+            </ul>
 
-        <ul id="blogList"></ul>
-        <button id="addBtn">Add Post</button>
+        <button id="addBtn" onclick="addPrompt()">Add Post</button>
 
         <dialog id="addBlogEntry">
             <form method="dialog">
@@ -56,7 +78,7 @@
             <form method="dialog">
                 <p>Delete this post?</p>
                 <button>Cancel</button>
-                <button id="deleteConfirmBtn" parentId="">Ok</button>
+                <button id="deleteConfirmBtn">Ok</button>
             </form>
         </dialog>
     </main>

@@ -1,143 +1,141 @@
-let allBlogs
+// items array that contains all todo items
+// JSON.parse is used to parse the stringified items from localStorage
+// if localStorage is empty, make the items letiable an empty array
+// let items = JSON.parse(localStorage.getItem("post-list")) || [];
+let items = JSON.parse(localStorage.getItem("post-list")) || [];
+if(items.length == 0){
+    items = [{
+        Title: "Post 1 Title",
+        Date: "Post 1 Date",
+        Summary: "Post 1 Summary"
+    },
+    {
+        Title: "Post 2 Title",
+        Date: "Post 2 Date",
+        Summary: "Post 2 Summary"
+    },
+    {
+        Title: "Post 3 Title",
+        Date: "Post 3 Date",
+        Summary: "Post 3 Summary"
+    }];
+}
 
-function createTemplate(){
-    let addBtn = document.getElementById("addBtn");
-    addBtn.addEventListener("click", function(){
+localStorage.setItem("post-list", JSON.stringify(items));
 
-        document.getElementById('addTitleInput').value="Title"
-        document.getElementById('addDateInput').value = "Date"
-        document.getElementById('addSummaryInput').value = "Summary"
 
-        let dia = document.getElementById('addBlogEntry')
-        dia.showModal()
+function addPrompt(){
+    let dia = document.getElementById('addBlogEntry')
+    dia.showModal()
+
+    let saveBtn = document.getElementById('addSaveBtn')
+    saveBtn.setAttribute('onclick', "addItem()")
+}
+
+// function to add item to the items array
+function addItem() {
+    // get the value of the input box with querySelector
+    let addTitle = document.getElementById("addTitleInput").value;
+    let addDate = document.getElementById("addDateInput").value;
+    let addSummary = document.getElementById("addSummaryInput").value;
+
+    // If input box is empty, return and alert the user
+    if (addTitle === "" || addDate == "" || addSummary == "") return alert("Please enter data");
+
+    // If input is valid, add item to items array
+    items.push({
+        Title: addTitle,
+        Date: addDate,
+        Summary: addSummary
     });
 
-    let saveBtn = document.getElementById("addSaveBtn");
-    saveBtn.addEventListener('click', () => {
-        addPost()
-    })
+    // then convert to a string with JSON.stringify and save to localStorage
+    localStorage.setItem("post-list", JSON.stringify(items));
+
+    // call function to list all items
+    listItems();
+
+    // clear input box
+    document.getElementById("addTitleInput").value = "Title"
+    document.getElementById("addDateInput").value = "Date";
+    document.getElementById("addSummaryInput").value = "Summary";
 }
 
-function addPost(){
-    let newTitle = document.getElementById('addTitleInput').value
-    let newDate = document.getElementById('addDateInput').value
-    let newSummary = document.getElementById('addSummaryInput').value
+function editPrompt(index){
+    document.getElementById("editTitleInput").value = items[index]["Title"];
+    document.getElementById("editDateInput").value = items[index]["Date"];
+    document.getElementById("editSummaryInput").value = items[index]["Summary"];
 
-    let newEl = document.createElement('p')
-    newEl.setAttribute('id', 'p4')
-    newEl.setAttribute('class', 'crudBlog')
-    newEl.setAttribute('title', newTitle)
-    newEl.setAttribute('date', newDate)
-    newEl.setAttribute('summary', newSummary)
-    allBlogs.push(newEl)
-
-    loadPage()
-}
-
-function setup(){
-    createTemplate()
-
-    allBlogs = document.getElementsByClassName('crudBlog');
-    allBlogs = Array.from(allBlogs)
-
-    loadPage()
-}
-
-function loadPage(){
-
-    //clear existing posts on page
-    $(document).ready(function(){
-        $('div').remove();
-    })
-
-
-    //start loading fresh
-    if(allBlogs.length == 0){
-        let postBody = document.createElement('p')
-        postBody.innerText = 'No Blog currently listed'
-        document.getElementById('blogList').appendChild(postBody)
-        return
-    }
-
-    for(let i = 0; i < allBlogs.length; i++){
-        let postBody = document.createElement('div')
-        let el = document.createElement('p')
-
-        el.setAttribute('id', allBlogs[i].getAttribute('id'))
-        el.setAttribute('class', 'crudBlog')
-        el.setAttribute('title', allBlogs[i].getAttribute('title'))
-        el.setAttribute('date', allBlogs[i].getAttribute('date'))
-        el.setAttribute('summary', allBlogs[i].getAttribute('summary'))
-
-        el.innerText = `${el.getAttribute('title')}
-        Date: ${el.getAttribute('date')}
-        Summary: ${el.getAttribute('summary')}`
-
-        postBody.appendChild(el)
-
-        let editBtn = document.createElement('button')
-        editBtn.innerText = "Edit"
-        editBtn.setAttribute('class', 'editBtn')
-        // editBtn.setAttribute('parentId', el.getAttribute('id'))
-        editBtn.addEventListener('click', () => {
-            console.log("index " + i + " is pressed")
-            editPost(i)
-        })
-
-        let deleteBtn = document.createElement('button')
-        deleteBtn.innerText = "Delete"
-        deleteBtn.setAttribute('class', 'deleteBtn')
-        deleteBtn.addEventListener('click', () => {
-            console.log("index " + i + " is pressed")
-            deletePost(i)
-        })
-        postBody.appendChild(editBtn)
-        postBody.appendChild(deleteBtn)
-
-        document.getElementById('blogList').appendChild(postBody)
-    }
-}
-
-function editPost(i) {
-    //let editBtn = document.querySelector("button[parentId=" + allBlogs[i].getAttribute('id') + "]");
     let dia = document.getElementById('editBlogEntry')
-
-    document.getElementById('editTitleInput').value = allBlogs[i].getAttribute('title')
-    document.getElementById('editDateInput').value = allBlogs[i].getAttribute('date')
-    document.getElementById('editSummaryInput').value = allBlogs[i].getAttribute('summary')
     dia.showModal()
-    
-    let saveBtn = document.getElementById("editSaveBtn");
-    saveBtn.addEventListener('click', () => {
-        console.log("index " + i + " is executed")
-        let newTitle = document.getElementById('editTitleInput').value
-        let newDate = document.getElementById('editDateInput').value
-        let newSummary = document.getElementById('editSummaryInput').value
 
-        allBlogs[i].setAttribute('title', newTitle)
-        allBlogs[i].setAttribute('date', newDate)
-        allBlogs[i].setAttribute('summary', newSummary)
-        console.log("index " + i + " got changed!")
+    let saveBtn = document.getElementById('editSaveBtn')
+    saveBtn.setAttribute('onclick', 'editItem(' + index + ')')
 
-        loadPage()
-    })
-    saveBtn.removeEventListener();
 }
 
-function deletePost(i){
+function editItem(index){
+    let editTitle = document.getElementById("editTitleInput").value;
+    let editDate = document.getElementById("editDateInput").value;
+    let editSummary = document.getElementById("editSummaryInput").value;
+
+    items[index]["Title"] = editTitle;
+    items[index]["Date"] = editDate;
+    items[index]["Summary"] = editSummary;
+
+    localStorage.setItem("post-list", JSON.stringify(items));
+    listItems();
+}
+
+function deletePrompt(index){
     let dia = document.getElementById('deleteConfirmEntry')
     dia.showModal()
-
-    let okBtn = document.getElementById('deleteConfirmBtn')
-    okBtn.addEventListener('click', () => {
-        console.log("index " + i + " is executed")
-        allBlogs.splice(i, 1);
-        console.log("index " + i + " got deleted!")
-        loadPage();
-    });
-
-    
+    let btn = document.getElementById('deleteConfirmBtn')
+    btn.setAttribute('onclick', 'deleteItem(' + index + ')');
 }
 
+// function to remove item from array with Array.splice()
+// removes item, then saves new items array to localStorage
+function deleteItem(index) {
+  items.splice(index, 1);
+  localStorage.setItem("post-list", JSON.stringify(items));
+  listItems();
+}
 
-window.addEventListener('DOMContentLoaded', setup)
+// function that generates list of items and populates the html
+function listItems() {
+    if(items.length == 0){
+        document.querySelector("#blogList").innerText = "No Blog currently listed";
+        return;
+    }
+    
+    let list = "";
+
+    for (let i = 0; i < items.length; i++) {
+        list += "<li>";
+        list += "Title: " + items[i]["Title"] + " ";
+        list += "<br>";
+        list += "Date: " + items[i]["Date"] + " ";
+        list += "<br>";
+        list += "Summary: " + items[i]["Summary"] + " ";
+        list += "<br>"
+        list +=
+        "<button class='label alert' onclick='editPrompt(" +
+        i +
+        ")'>Edit</button>";
+        list +=
+        "<button class='label alert' onclick='deletePrompt(" +
+        i +
+        ")'>Delete</button></li>";
+    }
+    document.getElementById("blogList").innerHTML = list;
+    //alert(document.querySelector("#blogList"))
+    // document.querySelector("#blogList").innerHTML = list;
+}
+
+// function to run when page loads
+(function () {
+    listItems();
+})();
+
+
