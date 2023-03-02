@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="CSS/styles.css">
         <link rel="stylesheet" href="CSS/post.css">
         <script src="./JS/framework.js"></script>
+        <script src="./JS/post.js"></script>
     </head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JZ4GC034KR"></script>
@@ -39,11 +40,17 @@
 
             <section class="search-bar">
                 <label class="search-prompt" for="search-prompt">SEARCH</label>
-                <input class="search-box" type="text" placeholder="enter keywords">
-                <button class="search-btn" type="submit">🔍</button>
-                <script>
-                    //grab detail post by the searched keyword
-                </script>
+                <input id="search-post" class="search-box" type="text" placeholder="enter keywords">
+                <button class="search-btn" type="submit" onclick="searchPost()">🔍</button>
+                <dialog id="searchDialog">
+                    <p>You have searched for: </p>
+                    <p id="searchInput"></p>
+                    <p>Search result: </p>
+                    <p>No matching post at this moment!</p>
+                    <form method="dialog">
+                        <button id="okFromConfirm" value="default">Ok</button>
+                    </form>
+                </dialog>
             </section>
 
             <section id="feedback-box">
