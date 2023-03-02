@@ -134,8 +134,12 @@ function listItems() {
 }
 
 // function to run when page loads
-(function () {
+// (function () {
+//     listItems();
+// })();
+
+window.onload = () => {
     listItems();
-})();
+}
 
 
