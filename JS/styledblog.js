@@ -101,13 +101,13 @@ function styledListItems() {
         list += "Summary: " + items[i]["Summary"] + " ";
         list += "<br>"
         list +=
-        "<button class='label alert' onclick='styledEditPrompt(" +
+        "<button class='label alert fa-solid fa-pen-to-square' onclick='styledEditPrompt(" +
         i +
-        ")'>Edit</button>";
+        ")'></button>";
         list +=
-        "<button class='label alert' onclick='styledDeletePrompt(" +
+        "<button class='label alert fa-solid fa-trash' onclick='styledDeletePrompt(" +
         i +
-        ")'>Delete</button></li>";
+        ")'></button></li>";
     }
     document.getElementById("blogList").innerHTML = list;
     //alert(document.querySelector("#blogList"))
