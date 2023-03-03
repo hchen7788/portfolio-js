@@ -2,9 +2,11 @@
     color:black;
     font-size: 1.5rem;
     font-family: 'Inconsolata', 'Dosis', monospace;
+    text-align: center;
+    margin-top: 50px;
 }
 
-#detailexp {
+.exp-group {
     display: block;
     margin: auto;
     width: 60%;
@@ -14,30 +16,20 @@
     flex-direction: column;
 }
 
-#detailexp img {
+.exp-item {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 50px;
+}
+
+.exp-item img {
     width: 25%;
     height: 25%;
     float: left;
     object-fit: contain;
 }
 
-#detailexp div{
-    padding: 50px;
-    margin-bottom: 30px;
-    height: inherit;
-}
-
-#detailexp section{
-    padding: 30px;
-    margin-bottom: 50px;
-}
-
-#detailexp li{
-    list-style-type: none;
-    margin-bottom: 100px;
-}
-
-.exp-text{
+.exp-item p{
     font-size: 1rem;
     float: right;
     width: 50%;
@@ -55,5 +47,4 @@
     #detailexp img{
         width: 100%;
     }
-
 }

@@ -16,6 +16,9 @@ somewhere if I want, so I can see the actual feedback.
 
 ### 3. Detail experience layout fixed
 Now with more structured CSS, the experience section looks more aligned and clean.
+With the use of flexbox and better tag hierachy, the layout is cleaner and easier
+to manage.
+It is also more responsive to ratio changes, and no more overlap or other weird problems.
 
 ### 4. Thrid party Javascript added -- Spotify Web SDK!
 Now with Spotify Web SDK included, I can listen to music from Spotify on the browser
@@ -23,7 +26,7 @@ without having to install an Spotify app on my desktop.
 TODO: hide the token in .gitignore. The current one expired already so no issue there.
 TODO: add a little widget of Spotify
 
-### 5. Images format optimization
+### 5. Images format optimization (and all other pages)
 Changed all jpeg and png into webp, and made alt text more descriptive.
 
 ## Blogs page
