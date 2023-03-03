@@ -81,6 +81,27 @@ animation for caret
     display: inline;
 }
 
+@media screen and (max-width: 780px){
+    #selfintro {
+        width: 80%;
+    }
+    #introleft, #introright{
+        float: none;
+        width: 100%;
+    }
+    #pic {
+        width: 30%;
+    }
+   
+    #introleft{
+        margin-bottom: 5px;
+    }
+    #introright{
+        margin-bottom: 5px;
+    }
+
+}
+
 @media screen and (max-width: 640px){
     #selfintro {
         width: 80%;
@@ -89,10 +110,9 @@ animation for caret
         float: none;
         width: 100%;
     }
-
-    #pic{
+    #pic {
         width: 60%;
-    } 
+    }
 }
 
 #content-nav{

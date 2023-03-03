@@ -35,6 +35,20 @@
     width: 50%;
 }
 
+@media screen and (max-width: 780px){
+    #detailexp{
+        width: 80%;
+    }
+
+    .exp-text{
+        width: 100%;
+    }
+
+    #detailexp img{
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 640px){
     #detailexp{
         width: 80%;
