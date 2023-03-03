@@ -17,6 +17,12 @@ somewhere if I want, so I can see the actual feedback.
 ### 3. Detail experience layout fixed
 Now with more structured CSS, the experience section looks more aligned and clean.
 
+### 4. Thrid party Javascript added -- Spotify Web SDK!
+Now with Spotify Web SDK included, I can listen to music from Spotify on the browser
+without having to install an Spotify app on my desktop.
+TODO: hide the token in .gitignore. The current one expired already so no issue there.
+TODO: add a little widget of Spotify
+
 ## Blogs page
 ### 1. Added Google Analytics (and all other sub pages)
 I added Google Analytics to every sub page of the site.

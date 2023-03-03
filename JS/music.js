@@ -28,9 +28,9 @@ window.onSpotifyWebPlaybackSDKReady = () => {
         console.error(message);
     });
 
-    document.getElementById('togglePlay').onclick = function() {
-      player.togglePlay();
-    };
+    // document.getElementById('togglePlay').onclick = function() {
+    //   player.togglePlay();
+    // };
 
     player.connect();
 }
