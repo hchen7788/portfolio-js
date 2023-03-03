@@ -23,6 +23,9 @@ without having to install an Spotify app on my desktop.
 TODO: hide the token in .gitignore. The current one expired already so no issue there.
 TODO: add a little widget of Spotify
 
+### 5. Images format optimization
+Changed all jpeg and png into webp, and made alt text more descriptive.
+
 ## Blogs page
 ### 1. Added Google Analytics (and all other sub pages)
 I added Google Analytics to every sub page of the site.
