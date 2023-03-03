@@ -37,28 +37,40 @@
 
 @media screen and (max-width: 780px){
     #detailexp{
+        margin: auto;
         width: 80%;
     }
 
-    .exp-text{
+    .exp-group{
+        float: none;
+    }
+
+    .exp-item p{
         width: 100%;
     }
 
-    #detailexp img{
+    .exp-item img{
         width: 100%;
+        margin: auto;
     }
 }
 
 @media screen and (max-width: 640px){
     #detailexp{
-        width: 80%;
-    }
-
-    .exp-text{
+        margin: auto;
         width: 100%;
     }
 
-    #detailexp img{
+    .exp-group{
+        float: none;
+    }
+
+    .exp-item p{
         width: 100%;
+    }
+
+    .exp-item img{
+        width: 100%;
+        margin: auto;
     }
 }
