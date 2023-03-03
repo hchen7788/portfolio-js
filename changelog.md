@@ -29,6 +29,9 @@ TODO: add a little widget of Spotify
 ### 5. Images format optimization (and all other pages)
 Changed all jpeg and png into webp, and made alt text more descriptive.
 
+### 6. Responsive query
+Add another breakpoint for tablet (780px) on home page.
+
 ## Blogs page
 ### 1. Added Google Analytics (and all other sub pages)
 I added Google Analytics to every sub page of the site.
