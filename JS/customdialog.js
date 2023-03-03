@@ -9,6 +9,9 @@
 //     });
 // }
 
+let confirmMessage = "Confirm result: ";
+let promptMessage = "Prompt result: ";
+
 function showCustomAlert(){
     let btn = document.getElementById("customAlertBtn")
     let dia = document.getElementById("customAlertDialog")
@@ -26,15 +29,16 @@ function showCustomConfirm(){
 
         let cancelBtn = document.getElementById('cancelFromConfirm');
         let okBtn = document.getElementById('okFromConfirm');
-
-        cancelBtn.addEventListener('click', () => {
-            document.getElementById("customOut").innerHTML = `${confirmMessage}false`;
-        });
-        okBtn.addEventListener('click', () => {
-            document.getElementById("customOut").innerHTML = `${confirmMessage}true`;
-        });
     }, 0);
 
+}
+
+function cancelConfirm(){
+    document.getElementById("customOut").innerHTML = `${confirmMessage}false`;
+}
+
+function okConfirm(){
+    document.getElementById("customOut").innerHTML = `${confirmMessage}true`;
 }
 
 
@@ -46,10 +50,6 @@ function showCustomPrompt(){
         let dia = document.getElementById('customPromptDialog')
         dia.showModal()
     }, 0);
-
-    let btn = document.getElementById('customPromptBtn')
-    let dia = document.getElementById('customPromptDialog')
-    dia.showModal()
 }
 
 function emptyPromptValue(){
@@ -62,7 +62,11 @@ function emptyPromptValue(){
 
 function changePromptValue(){
     let newInput = document.getElementById("customInput").value
-    document.getElementById("customOut").innerHTML = `${promptMessage}${newInput}`;
+    if(newInput == ""){
+        document.getElementById("customOut").innerHTML = `User didn't enter anything`;
+    } else{
+        document.getElementById("customOut").innerHTML = `${promptMessage}${newInput}`;
+    }
 
     //clean up input field
     let inputField = document.getElementById('customInput')
